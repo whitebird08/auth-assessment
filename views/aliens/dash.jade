@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  a(href='/aliens/signup' role='button') Sign Up 
+  a(href='/aliens/signin' role='button') Sign In  
+
+  table
+    thead
+      tr
+        th Name
+        th Phone
+        th Show
+    tbody
+      for alien in allAliens
+        tr
+          td= alien.name
+          td= alien.phone
+          td
+            a(href='/aliens/'+ alien._id) Show 
+
+  form(action='/aliens/signout' method='post')  
+      div
+        input(type='submit' name='logout' value='Log Out')

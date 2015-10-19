@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+
+  h2 Alien Sign Up
+
+  //- include ../error.jade
+
+  form(action='/aliens/:id/edit' method='post') 
+    div
+    input(type='text' name='name') 
+    div
+    input(type='text' name='phone') 
+    div
+      input(type='submit' name='signup' value='update')
